@@ -1,0 +1,47 @@
+---
+title: Overview | Boyne Style Guide
+fabricator: true
+---
+
+<h1>Introduction</h1>
+
+<p>This is a living document that represents the guidelines for each individual UI component in the Boyne app.</p>
+
+<h2>Usage</h2>
+
+<p>For each new component created, we will need to copy the markup found in the individual Razor templates/cshtml files:</p>
+
+<p>All Razor Templates can be found in the following directory</p></p>
+<pre class="language-markup"><code class="language-markup">byn.website/Views/Shared/</code></pre>
+
+<h3>Example: Header.cshtml</h3>
+
+<p>Original code from <strong>byn.website/Views/Shared/Layout/_Header.cshtml</strong></p>
+<pre class="language-markup"><code class="language-markup">
+@model Ingeniux.Runtime.ICMSPage
+@using Ingeniux.Runtime.Library.Models.Pages
+@{
+    var page = new PageView();
+    page.Map(Model);
+    //  var page = ModelFactory.GetModel&lt;PageView>(Model);
+    &lt;ul>
+    @foreach (var primaryNavItem in page.SiteControl.Navigation.Navigations)
+    {
+        &lt;li>@primaryNavItem.Name&lt;/li>
+    }
+    &lt;/ul>
+}
+</code></pre>
+
+<p>We want to take the original HTML and convert it into markup for the style guide.</p>
+
+<div>Output:</div>
+<pre class="language-markup"><code class="language-markup">
+    &lt;ul>
+        &lt;li>Item 1&lt;/li>
+        &lt;li>Item 2&lt;/li>
+        &lt;li>Item 3&lt;/li>
+    &lt;/ul>
+</code></pre>
+
+<p>With each output, we should be able to copy and paste the html into new *.cshtml files to create new components.</p>
