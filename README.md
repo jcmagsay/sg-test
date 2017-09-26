@@ -1,6 +1,6 @@
-# Boyne Resorts Style Guide
+# [app_name] Style Guide
 
-This app represents all components within the Boyne .NET application.
+This app represents all components within the [app_name] application.
 
 
 ## Quick Start
