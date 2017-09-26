@@ -12,7 +12,7 @@ $ npm install
 Start App
 $ npm start
 
-New page should open at `http://localhost:3000/`
+New page should open at http://localhost:3000/
 ```
 
 ## Tooling (Fabricator)
@@ -25,5 +25,7 @@ New page should open at `http://localhost:3000/`
 ## Documentation
 
 More information on the Fabricator Toolkit can be found at:
+
 [Fabricator Github](https://github.com/fbrctr/fabricator)
+
 [Fabricator Site](http://fbrctr.github.io/)

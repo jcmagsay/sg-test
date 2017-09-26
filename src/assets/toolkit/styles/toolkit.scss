@@ -11,5 +11,28 @@ body {
   font-size: 1.6rem;
 }
 
-/* COMPONENT STYLESHEETS */
+ul, ol {
+  > * {
+    padding-top: 1.6rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 3.2rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.pad_top8 {
+  padding-top: 6.4rem;
+}
+
+/*----------------------------------
+ COMPONENT STYLESHEETS (CUSTOM)
+------------------------------------*/
+
 @import 'button';
+
+// new custom styles here

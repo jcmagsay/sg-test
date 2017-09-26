@@ -1,49 +1,117 @@
 ---
-title: Overview | Boyne Style Guide
+title: Overview | [app_name] Style Guide
 fabricator: true
 ---
 
-<h1>Introduction</h1>
+<section id="intro">
+  <h2>Introduction</h1>
 
-<p>
-  This is a living document that represents the guidelines for each individual UI component in the Boyne app.
-</p>
+  <p>
+    This is a living document that represents the guidelines for each individual UI component in the [app_name] app.
+  </p>
+</section>
 
-<h2>Usage</h2>
+<section id="purpose">
+  <h2>Purpose</h2>
 
-<p>For each new component created, we will need to copy the markup found in the individual Razor templates/cshtml files:</p>
+  <p>
+    The purpose of this style guide is to visualize all components that are 100% developed within [app_name]. See <a href="components.html">Components</a> section for all available components.
+  </p>
 
-<p>All Razor Templates can be found in the following directory</p></p>
-<pre class="language-markup"><code class="language-markup">byn.website/Views/Shared/</code></pre>
+</section>
 
-<h3>Example: Header.cshtml</h3>
 
-<p>Original code from <strong>byn.website/Views/Shared/Layout/_Header.cshtml</strong></p>
-<pre class="language-markup"><code class="language-markup">
-@model Ingeniux.Runtime.ICMSPage
-@using Ingeniux.Runtime.Library.Models.Pages
-@{
-    var page = new PageView();
-    page.Map(Model);
-    //  var page = ModelFactory.GetModel&lt;PageView>(Model);
-    &lt;ul>
-    @foreach (var primaryNavItem in page.SiteControl.Navigation.Navigations)
-    {
-        &lt;li>@primaryNavItem.Name&lt;/li>
-    }
-    &lt;/ul>
-}
-</code></pre>
+<section id="benefits">
+  <h2>Benefits</h2>
 
-<p>We want to take the original HTML and convert it into markup for the style guide.</p>
+  <p>
+    Displaying the components in the style guide will allow [company_name] to:
+  </p>
 
-<div>Output:</div>
-<pre class="language-markup"><code class="language-markup">
-    &lt;ul>
-        &lt;li>Item 1&lt;/li>
-        &lt;li>Item 2&lt;/li>
-        &lt;li>Item 3&lt;/li>
-    &lt;/ul>
-</code></pre>
+  <ol>
+    <li>Visualize style updates</li>
+    <li>Provide code samples</li>
+    <li>Apply themes across components</li>
+  </ol>
+</section>
 
-<p>With each output, we should be able to copy and paste the html into new *.cshtml files to create new components.</p>
+<section id="use">
+  <h2>Usage</h2>
+
+  <section>
+    <h3>New Components</h3>
+
+    <p>For every new component created within the [app_name] project, we want to:</p>
+    <ol>
+      <li>
+        Create a new .html file in the following directory and with the markup output from the new component:
+        <pre class="language-markup"><code class="language-markup">/src/materials/components/</code></pre>
+        Example CSS:
+        <pre class="language-html">
+          &lt;button class="button">Button Text&lt;/button>
+        </code></pre>
+      </li>
+      <li>
+        <p>Create a new _*.scss file in the following directory and the relative styles in the _*.scss file:</p>
+        <em>(Don't forget the _ or underscore in the file name since it's a partial)</em>
+
+        <pre class="language-markup"><code class="language-markup">/src/assets/toolkit/styles/</code></pre>
+
+        Example SCSS:
+        <pre class="language-css"><code class="language-css">
+          .button { ... }
+        </code></pre>
+      </li>
+      <li>
+        Import the new _*.scss file (step 2) into the following file and with the following code:
+        <pre class="language-markup"><code class="language-markup">/src/assets/toolkit/styles/toolkit.scss</code></pre>
+
+        Example SCSS:
+        <pre class="language-css"><code class="language-css">
+          /*----------------------------------
+           COMPONENT STYLESHEETS (CUSTOM)
+          ------------------------------------*/
+
+          @import 'button';
+
+        </code></pre>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Updates & Maintenance</h3>
+
+    <p>When a change is made to any component within the [app_name] project, the development team needs to make sure that the new markup and styles are also updated in this style guide app.</p>
+
+    <h4>HTML changes</h4>
+    <p>Update the *.html file with the newly updated html output from [app_name]</p>
+
+    <h4>SCSS changes</h4>
+    <p>Update the _*.scss file with the newly updated styles from [app_name]</p>
+  </section>
+
+</section>
+
+
+<section>
+  <h2>Improvements</h3>
+
+  <ul>
+    <li>
+      Use WebPack in [app_name] to built to the stylesheet output directory to elimiate need to update and maintain styles for this style guide.
+      <pre class="language-markup"><code class="language-markup">/src/assets/toolkit/styles/</code></pre>
+    </li>
+    <li>
+      Use WebPack to build out themes for the style guide
+    </li>
+    <li>
+      Create a control that allows a user to change the theme of this style guide
+    </li>
+  </ul>
+
+</section>
+
+<div class="pad_top8">
+  <a href="index.html#">Back to top</a>
+</div>
