@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-
 /**
  * Define plugins based on environment
  * @param {boolean} isDev If in development mode
